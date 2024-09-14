@@ -1,17 +1,28 @@
 import numpy as np
 
-# Tạo hai vector A và B
-A = np.array([1, 2, 3])
-B = np.array([4, 5, 6])
+def nhap_toa_do(diem):
+    try:
+        x = input(f"Nhập tọa độ x của điểm {diem}: ")
+        y = input(f"Nhập tọa độ y của điểm {diem}: ")
+        z = input(f"Nhập tọa độ z của điểm {diem}: ")
+        diem = np.array([x, y, z])
+        return diem
+    except ValueError:
+        print("Vui lòng nhập số hợp lệ cho tọa độ!")
 
-# Tính tích vô hướng (dot product)
-dot_product = np.dot(A, B)
+a = nhap_toa_do("A")
+b = nhap_toa_do("B")
+print(f"Tọa độ điểm A là: {a}")
+print(f"Tọa độ điểm B là: {b}")
 
-# Tính độ dài (norm) của từng vector
-norm_A = np.linalg.norm(A)
-norm_B = np.linalg.norm(B)
+tich_vo_huong = np.dot(a, b)
+print(f"Tích vô hướng của 2 vecto {a}, và {b} là: {tich_vo_huong}")
 
-# Tính độ tương đồng cosine
-cosine_similarity = dot_product / (norm_A * norm_B)
+norm_a = np.linalg.norm(a)
+norm_b = np.linalg.norm(b)
+print(f"Độ dài vecto a là: {norm_a}")
+print(f"Độ dài vecto b là: {norm_b}")
 
-print(f"Độ tương đồng Cosine giữa A và B là: {cosine_similarity}")
+cosin = tich_vo_huong / (norm_a * norm_b)
+
+print(f"Cosin giữa 2 góc tạo bởi 2 vecto a và b là: {cosin}")
