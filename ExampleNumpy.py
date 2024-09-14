@@ -3,7 +3,6 @@ import numpy as np
 def nhap_toa_do(diem):
     while True:
         try:
-            # Chuyển đổi input thành số thực (float)
             x = float(input(f"Nhập tọa độ x của điểm {diem}: "))
             y = float(input(f"Nhập tọa độ y của điểm {diem}: "))
             z = float(input(f"Nhập tọa độ z của điểm {diem}: "))
